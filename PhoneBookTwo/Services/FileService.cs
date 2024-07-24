@@ -25,7 +25,8 @@ namespace PhoneBookTwo.Services
         }
         public void AddContact(Contact contact)
         {
-            string newContact = $"{contact.Name}: {contact.PhoneNum} ";
+            string newContact = JsonConvert.SerializeObject(contact);
+            //string newContact = $"{contact.Name}: {contact.PhoneNum} ";
             File.AppendAllText(filePath, newContact + "\n");
         }
 
