@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Microsoft.VisualBasic;
 
 namespace PhoneBookTwo.Services
 {
@@ -25,9 +26,12 @@ namespace PhoneBookTwo.Services
         }
         public void AddContact(Contact contact)
         {
-            string newContact = JsonConvert.SerializeObject(contact);
+            List<Contact> contacts = new List<Contact>();
+            string newContact = JsonConvert.SerializeObject(contact, Formatting.Indented);
             //string newContact = $"{contact.Name}: {contact.PhoneNum} ";
-            File.AppendAllText(filePath, newContact + "\n");
+            File.AppendAllText(filePath, newContact );
+            Console.WriteLine("Kontakt JSON formatda PhoneBook.json fayliga saqlandi.");
+
         }
 
         public void DeleteContact(string name)

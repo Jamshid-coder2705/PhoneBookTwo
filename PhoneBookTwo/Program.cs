@@ -1,5 +1,8 @@
 ﻿using PhoneBookTwo.Models;
 using PhoneBookTwo.Services;
+using System;
+
+
 
 namespace PhoneBookTwo
 {
@@ -12,6 +15,7 @@ namespace PhoneBookTwo
             Contact contact = new Contact();
 
             Console.WriteLine(" 1- Yaratish\n 2- Qidiruv\n 3- O'chirish");
+            Console.Write(" Raqam tanlang =>");
             int selection = int.Parse(Console.ReadLine());
             switch (selection)
             {
